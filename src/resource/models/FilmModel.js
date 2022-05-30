@@ -5,6 +5,7 @@ const Film = new Schema({
   name: String,
   img: String,
   videoId: String,
+  filmLink: String,
 });
 
 module.exports = mongoose.model('Film', Film);
