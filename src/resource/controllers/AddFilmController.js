@@ -13,7 +13,8 @@ class AddFilmController{
         Film.create({
             name: req.body.name,
             img: req.body.img,
-            videoId: req.body.videoId
+            videoId: req.body.videoId,
+            subScriteState: 0
           }, () => {
             res.redirect('/')
         });

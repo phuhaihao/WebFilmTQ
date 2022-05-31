@@ -1,10 +1,8 @@
 
 class mongooseToObject{
-
     multiMongooseToObject(mongooses){
-        return mongooses = mongooses.map(mongoose => {
-            mongoose.toObject()
-        })
+        mongooses = mongooses.map(mongoose => mongoose.toObject())
+        return mongooses
     }
 
     singleMongooseToObject(mongooses){

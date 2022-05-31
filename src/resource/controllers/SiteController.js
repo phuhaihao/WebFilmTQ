@@ -12,6 +12,15 @@ class SiteController{
         })
         .catch(next)
     }
+
+    //[GET] /addSubscribe
+    addSubscribe(req, res, next){
+        Film.updateOne({filmLink: req.query.filmLink}, {subScriteState: 1})
+        .then(() => {
+            res.redirect('/')
+        })
+        .catch()
+    }
 };
 
 module.exports = new SiteController;

@@ -5,11 +5,22 @@ class SubscribeController{
 
     //[GET] /subscribe
     subscribe(req, res, next) {
-        Film.findOne({filmLink: req.params.filmLink})
-        .then(film => {
-            res.render('Subscribe', {film: mongooseHelper.singleMongooseToObject(film)})
+        Film.find({subScriteState: 1})
+        .then(films => {
+            //mongooseHelper.multiMongooseToObject(films)
+            films = films.map(film => film.toObject())
+            res.render('Subscribe', {films})
         })
         .catch(next)
+    }
+
+    //[GET] /unsubscribe
+    unSubscribe(req, res, next){
+        Film.updateOne({filmLink: req.query.filmLink}, {subScriteState: 0})
+        .then(() => {
+            res.redirect('/subscribe')
+        })
+        .catch()
     }
 };
 

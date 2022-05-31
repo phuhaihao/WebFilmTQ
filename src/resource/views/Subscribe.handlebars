@@ -1,22 +1,17 @@
 <div class="mt-4">
+    <h3 class="col-lg-6 offset-lg-4"> Các Phim Đã Theo Dõi </h3>
     <div class="row">
-        <div class="col-sm-2">
-            Đây là phim theo dõi
+        {{#each films}}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="{{this.img}}" alt="Card image cap" style="height: 200px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size: 15px">{{this.name}}</h5>
+                        <a href="subscribe/unSubscribe?filmLink={{this.filmLink}}" class="btn btn-danger unsubBtn" >Bỏ Theo Dõi</a>
+                        <a href="/view/{{this.filmLink}}" class="btn btn-primary film-view">Xem Phim</a>
+                    </div>
+            </div>
         </div>
-        <div class="col-sm-2">
-            Đây là phim theo dõi
-        </div>
-        <div class="col-sm-2">
-            Đây là phim theo dõi
-        </div>
-        <div class="col-sm-2">
-            Đây là phim theo dõi
-        </div>
-        <div class="col-sm-2">
-            Đây là phim theo dõi
-        </div>
-        <div class="col-sm-2">
-            Đây là phim theo dõi
-        </div>
+        {{/each}}
     </div>
 </div>

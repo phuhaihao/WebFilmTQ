@@ -8,6 +8,8 @@ const Film = new Schema({
   img: String,
   videoId: String,
   filmLink: {type: String, slug: "name", unique:true},
+  subScriteState: Number,
+
 }, {
   timestamps: true
 });

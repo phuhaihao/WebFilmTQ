@@ -4,13 +4,13 @@
 
         {{#each films}}
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="card">
                   <img class="card-img-top" src="{{this.img}}" alt="Card image cap" style="height: 200px">
                     <div class="card-body">
                         <h5 class="card-title" style="font-size: 15px">{{this.name}}</h5>
-                        <a href="#" class="btn btn-danger" >Theo Dõi</a>
-                        <a href="/view/{{this.filmLink}}" class="btn btn-primary" >Xem Phim</a>
+                        <a href="/addsubscribe?filmLink={{this.filmLink}}" class="btn btn-danger" id="subscribe">Theo Dõi</a>
+                        <a href="/view/{{this.filmLink}}" class="btn btn-primary film-view">Xem Phim</a>
                     </div>
                 </div>
             </div>
