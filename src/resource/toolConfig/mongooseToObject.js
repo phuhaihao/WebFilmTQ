@@ -1,6 +1,4 @@
 
-
-
 class mongooseToObject{
 
     multiMongooseToObject(mongooses){

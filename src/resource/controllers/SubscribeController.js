@@ -1,16 +1,16 @@
 const Film = require('../models/FilmModel');
 const mongooseHelper = require('../toolConfig/mongooseToObject')
 
-class ViewFilmController{
+class SubscribeController{
 
-    //[GET] /view/:filmLink
-    view(req, res, next){
+    //[GET] /subscribe
+    subscribe(req, res, next) {
         Film.findOne({filmLink: req.params.filmLink})
         .then(film => {
-            res.render('ViewFilm', {film: mongooseHelper.singleMongooseToObject(film)})
+            res.render('Subscribe', {film: mongooseHelper.singleMongooseToObject(film)})
         })
         .catch(next)
     }
 };
 
-module.exports = new ViewFilmController;
+module.exports = new SubscribeController;

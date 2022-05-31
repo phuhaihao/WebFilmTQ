@@ -14,6 +14,9 @@ app.set('views', path.join(__dirname, 'resource', 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 Router(app);
 
 //connect database
